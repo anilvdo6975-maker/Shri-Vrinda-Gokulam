@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="hi">
 <head>
     <meta charset="UTF-8">
@@ -9,176 +9,276 @@
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
         }
 
         body {
-            background-color: #fce4ec;
+            background-color: #111;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            padding: 10px;
         }
 
-        .mobile-card {
-            background: #ffffff;
+        /* Instagram Reel Frame */
+        .reel-container {
             width: 100%;
-            max-width: 400px;
-            border-radius: 20px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-            overflow: hidden;
+            max-width: 412px;
+            height: 100vh;
+            max-height: 850px;
+            background: #000;
             position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0,0,0,0.8);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
-        .header-banner {
-            background: linear-gradient(135deg, #fff0f5, #f8bbd0);
-            padding: 20px;
+        /* Animated Video-like Background */
+        .reel-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.1) 40%, rgba(0,0,0,0.85) 100%),
+                        url('https://images.unsplash.com/photo-1545105511-923f63f29237?auto=format&fit=crop&w=800&q=80');
+            background-size: cover;
+            background-position: center;
+            animation: zoomReel 12s infinite alternate ease-in-out;
+            z-index: 1;
+        }
+
+        @keyframes zoomReel {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.15); }
+        }
+
+        /* Reel Content Overlays */
+        .reel-content {
+            position: relative;
+            z-index: 2;
+            padding: 20px 15px;
+            color: #fff;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .header-brand {
             text-align: center;
+            background: rgba(255, 255, 255, 0.85);
+            padding: 12px;
+            border-radius: 15px;
+            backdrop-filter: blur(5px);
+            margin-top: 10px;
         }
 
-        .logo {
-            font-weight: bold;
-            font-size: 18px;
+        .brand-logo {
+            font-size: 14px;
+            font-weight: 800;
             color: #1a237e;
             letter-spacing: 1px;
-            margin-bottom: 10px;
         }
 
-        .title {
+        .brand-title {
+            font-size: 24px;
+            font-weight: 900;
             color: #ad1457;
-            font-size: 28px;
-            font-family: 'Georgia', serif;
-            margin-bottom: 5px;
+            font-family: Georgia, serif;
         }
 
-        .subtitle {
-            font-size: 13px;
-            color: #555;
+        .brand-tagline {
+            font-size: 11px;
+            color: #444;
             font-style: italic;
         }
 
-        .grid-container {
+        /* Horizontal Scrollable Locations (Reel Style) */
+        .locations-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
-            padding: 15px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 6px;
+            margin: 15px 0;
         }
 
-        .location-card {
-            background: #fff5f8;
-            border: 1px solid #f8bbd0;
-            border-radius: 10px;
-            padding: 10px;
-            text-align: center;
-            font-size: 12px;
-        }
-
-        .location-card img {
-            width: 100%;
-            height: 80px;
-            object-fit: cover;
+        .loc-card {
+            background: rgba(255, 255, 255, 0.9);
             border-radius: 8px;
-            margin-bottom: 5px;
+            padding: 4px;
+            text-align: center;
+            color: #000;
         }
 
-        .details-section {
-            background: #fff;
-            padding: 15px;
+        .loc-card img {
+            width: 100%;
+            height: 50px;
+            object-fit: cover;
+            border-radius: 6px;
+        }
+
+        .loc-name {
+            font-size: 9px;
+            font-weight: bold;
+            margin: 2px 0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            color: #880e4f;
+        }
+
+        .loc-time {
+            font-size: 8px;
+            background: #f8bbd0;
+            border-radius: 10px;
+            padding: 1px 3px;
+            display: inline-block;
+        }
+
+        /* Offer & Pricing Section */
+        .offer-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 12px;
+            color: #222;
             text-align: center;
-            border-top: 1px dashed #f8bbd0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        .plot-info {
+            font-size: 12px;
+            font-weight: bold;
+            color: #555;
         }
 
         .price-tag {
-            font-size: 20px;
+            font-size: 26px;
+            font-weight: 900;
+            color: #b71c1c;
+            margin: 3px 0;
+        }
+
+        .contact-num {
+            font-size: 13px;
             font-weight: bold;
-            color: #ad1457;
-            margin-bottom: 5px;
+            color: #1565c0;
         }
 
-        .contact-info {
-            font-size: 14px;
-            color: #333;
-            margin-top: 10px;
-            font-weight: 600;
-        }
-
-        /* Pop-up Overlay Box */
-        .popup-box {
-            background: rgba(0, 0, 0, 0.75);
-            padding: 20px;
-            border-radius: 15px;
-            margin: 15px;
+        /* Pop-up Overlay Box (Bottom Sticky Reel Action) */
+        .action-popup {
+            background: rgba(20, 20, 20, 0.88);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 16px;
+            padding: 15px;
             text-align: center;
-            color: #fff;
+            backdrop-filter: blur(8px);
+            margin-bottom: 10px;
         }
 
-        .popup-title {
-            font-size: 15px;
-            margin-bottom: 15px;
+        .action-title {
+            font-size: 14px;
+            color: #fff;
+            margin-bottom: 12px;
+            font-weight: 500;
         }
 
         .book-btn {
             display: block;
             width: 100%;
-            background-color: #d81b60;
+            background: linear-gradient(45deg, #d81b60, #ad1457);
             color: white;
             text-decoration: none;
-            padding: 14px 0;
+            padding: 12px 0;
             border-radius: 25px;
-            font-size: 18px;
+            font-size: 17px;
             font-weight: bold;
-            box-shadow: 0 4px 10px rgba(216, 27, 96, 0.4);
-            transition: background 0.3s ease;
+            text-transform: uppercase;
+            box-shadow: 0 4px 12px rgba(216, 27, 96, 0.5);
+            animation: pulse 2s infinite;
         }
 
-        .book-btn:hover {
-            background-color: #c2185b;
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+            100% { transform: scale(1); }
         }
 
         .whatsapp-btn {
-            display: block;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             width: 100%;
             background-color: #25d366;
             color: white;
             text-decoration: none;
-            padding: 10px 0;
+            padding: 9px 0;
             border-radius: 25px;
-            font-size: 14px;
+            font-size: 13px;
             font-weight: bold;
-            margin-top: 10px;
+            margin-top: 8px;
         }
     </style>
 </head>
 <body>
 
-    <div class="mobile-card">
-        <!-- Header -->
-        <div class="header-banner">
-            <div class="logo">SHRI VRINDA</div>
-            <h1 class="title">Sri Vrinda Gokulam</h1>
-            <p class="subtitle">Where devotion meets dreams of tomorrow.</p>
-        </div>
+    <div class="reel-container">
+        <!-- Live Reel Background Animation -->
+        <div class="reel-bg"></div>
 
-        <!-- Details -->
-        <div class="details-section">
-            <p>PLOT SIZE: 120 SQ. YARDS</p>
-            <div class="price-tag">₹37.20 Lakh*</div>
-            <div class="contact-info">संपर्क करें: +91 9084465564</div>
-        </div>
+        <div class="reel-content">
+            <!-- Header Banner -->
+            <div class="header-brand">
+                <div class="brand-logo">SHRI VRINDA</div>
+                <div class="brand-title">Sri Vrinda Gokulam</div>
+                <div class="brand-tagline">Where devotion meets dreams of tomorrow.</div>
+            </div>
 
-        <!-- Action Box -->
-        <div class="popup-box">
-            <div class="popup-title">When would you love to buy your dream plots?</div>
-            
-            <!-- कॉल करने के लिए लिंक -->
-            <a href="tel:9084465564" class="book-btn">Book now</a>
-            
-            <!-- व्हाट्सएप पर मैसेज के लिए विकल्प -->
-            <a href="https://wa.me/919084465564?text=Hello,%20I%20am%20interested%20in%20Sri%20Vrinda%20Gokulam%20plots." class="whatsapp-btn">WhatsApp पर मैसेज करें</a>
+            <!-- Main Info -->
+            <div>
+                <!-- Locations -->
+                <div class="locations-grid">
+                    <div class="loc-card">
+                        <img src="https://images.unsplash.com/photo-1561361513-2d000a50f0dc?auto=format&fit=crop&w=200&q=80" alt="Gokul">
+                        <div class="loc-name">Gokul</div>
+                        <div class="loc-time">⏱ 12 Min</div>
+                    </div>
+                    <div class="loc-card">
+                        <img src="https://images.unsplash.com/photo-1609137144820-1c33f2081734?auto=format&fit=crop&w=200&q=80" alt="Raman Reti">
+                        <div class="loc-name">Raman Reti</div>
+                        <div class="loc-time">⏱ 10 Min</div>
+                    </div>
+                    <div class="loc-card">
+                        <img src="https://images.unsplash.com/photo-1545105511-923f63f29237?auto=format&fit=crop&w=200&q=80" alt="Brahmand">
+                        <div class="loc-name">Brahmand</div>
+                        <div class="loc-time">⏱ 8 Min</div>
+                    </div>
+                    <div class="loc-card">
+                        <img src="https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=200&q=80" alt="Chinta Haran">
+                        <div class="loc-name">Chinta Haran</div>
+                        <div class="loc-time">⏱ 5 Min</div>
+                    </div>
+                </div>
+
+                <!-- Price Section -->
+                <div class="offer-card">
+                    <div class="plot-info">PLOT SIZE: 120 SQ. YARDS</div>
+                    <div class="price-tag">₹31.00 Lakh*</div>
+                    <div class="contact-num">कॉल करें: +91 9084465564</div>
+                </div>
+            </div>
+
+            <!-- Reel Overlay Action Popup -->
+            <div class="action-popup">
+                <div class="action-title">When would you love to buy your dream plots?</div>
+                <a href="tel:9084465564" class="book-btn">Book now</a>
+                <a href="https://wa.me/919084465564?text=Hello,%20I%20am%20interested%20in%20120%20sq.%20yards%20plot%20in%20Sri%20Vrinda%20Gokulam." class="whatsapp-btn">
+                    WhatsApp पर मैसेज करें
+                </a>
+            </div>
         </div>
     </div>
 
 </body>
 </html>
-
