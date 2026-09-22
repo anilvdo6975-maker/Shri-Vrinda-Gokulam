@@ -1,0 +1,184 @@
+﻿<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sri Vrinda Gokulam</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #fce4ec;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 10px;
+        }
+
+        .mobile-card {
+            background: #ffffff;
+            width: 100%;
+            max-width: 400px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .header-banner {
+            background: linear-gradient(135deg, #fff0f5, #f8bbd0);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .logo {
+            font-weight: bold;
+            font-size: 18px;
+            color: #1a237e;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        .title {
+            color: #ad1457;
+            font-size: 28px;
+            font-family: 'Georgia', serif;
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            font-size: 13px;
+            color: #555;
+            font-style: italic;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            padding: 15px;
+        }
+
+        .location-card {
+            background: #fff5f8;
+            border: 1px solid #f8bbd0;
+            border-radius: 10px;
+            padding: 10px;
+            text-align: center;
+            font-size: 12px;
+        }
+
+        .location-card img {
+            width: 100%;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 5px;
+        }
+
+        .details-section {
+            background: #fff;
+            padding: 15px;
+            text-align: center;
+            border-top: 1px dashed #f8bbd0;
+        }
+
+        .price-tag {
+            font-size: 20px;
+            font-weight: bold;
+            color: #ad1457;
+            margin-bottom: 5px;
+        }
+
+        .contact-info {
+            font-size: 14px;
+            color: #333;
+            margin-top: 10px;
+            font-weight: 600;
+        }
+
+        /* Pop-up Overlay Box */
+        .popup-box {
+            background: rgba(0, 0, 0, 0.75);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 15px;
+            text-align: center;
+            color: #fff;
+        }
+
+        .popup-title {
+            font-size: 15px;
+            margin-bottom: 15px;
+        }
+
+        .book-btn {
+            display: block;
+            width: 100%;
+            background-color: #d81b60;
+            color: white;
+            text-decoration: none;
+            padding: 14px 0;
+            border-radius: 25px;
+            font-size: 18px;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(216, 27, 96, 0.4);
+            transition: background 0.3s ease;
+        }
+
+        .book-btn:hover {
+            background-color: #c2185b;
+        }
+
+        .whatsapp-btn {
+            display: block;
+            width: 100%;
+            background-color: #25d366;
+            color: white;
+            text-decoration: none;
+            padding: 10px 0;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="mobile-card">
+        <!-- Header -->
+        <div class="header-banner">
+            <div class="logo">SHRI VRINDA</div>
+            <h1 class="title">Sri Vrinda Gokulam</h1>
+            <p class="subtitle">Where devotion meets dreams of tomorrow.</p>
+        </div>
+
+        <!-- Details -->
+        <div class="details-section">
+            <p>PLOT SIZE: 120 SQ. YARDS</p>
+            <div class="price-tag">₹37.20 Lakh*</div>
+            <div class="contact-info">संपर्क करें: +91 9084465564</div>
+        </div>
+
+        <!-- Action Box -->
+        <div class="popup-box">
+            <div class="popup-title">When would you love to buy your dream plots?</div>
+            
+            <!-- कॉल करने के लिए लिंक -->
+            <a href="tel:9084465564" class="book-btn">Book now</a>
+            
+            <!-- व्हाट्सएप पर मैसेज के लिए विकल्प -->
+            <a href="https://wa.me/919084465564?text=Hello,%20I%20am%20interested%20in%20Sri%20Vrinda%20Gokulam%20plots." class="whatsapp-btn">WhatsApp पर मैसेज करें</a>
+        </div>
+    </div>
+
+</body>
+</html>
+
